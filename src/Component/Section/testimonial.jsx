@@ -36,7 +36,7 @@ const testimonials = [
   },
 ];
 
- const Testimonials = () => {
+ const Testimonial = () => {
   const [activeIdx, setActiveIdx] = useState(0);
 
   const next = () => {
@@ -152,4 +152,4 @@ const testimonials = [
   );
 };
 
-export default Testimonials;
+export default Testimonial;
