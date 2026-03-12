@@ -11,8 +11,8 @@ const navLinks = [
   { href: "#testimonials", label: "Testimonials" },
 ];
 
-const Navbar = () => {
-  const [ismobilemenuopen, setismobilemenuopen] = useState(false);
+  const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -58,26 +58,26 @@ const Navbar = () => {
         {/* Mobile menu  button */}
         <Button
           className="md:hidden p-2 text-foreground "
-          onClick={() => setismobilemenuopen((prev) => !prev)}
+          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
         >
-          {ismobilemenuopen ? <X size={24} /> : <Menu size={24} className="" />}
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} className="" />}
         </Button>
       </nav>
       {/* mobile menu */}
-      {ismobilemenuopen && (
+      {isMobileMenuOpen && (
         <div className="md:hidden my-2 w-full glass-strong animate-fade-in">
           <div className="container mx-auto px-6 py-6 flex flex-col gap-4 ">
             {navLinks.map((link, index) => (
               <a
                 href={link.href}
                 key={index}
-                onClick={() => setismobilemenuopen(false)}
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="text-lg text-muted-foreground hover:text-foreground py-2"
               >
                 {link.label}
               </a>
             ))}
-            <Button onClick={() => setismobilemenuopen(false)}>
+            <Button onClick={() => setIsMobileMenuOpen(false)}>
               Contact Me
             </Button>
           </div>
