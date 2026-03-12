@@ -46,8 +46,7 @@ const Hero = () => {
           className="w-full h-full object-cover opacity-40"
         />
       </div>
-      <div className="bg-gradient-to-b from-background/20 via-background/80 to-background">
-      </div>
+      <div className="bg-gradient-to-b from-background/20 via-background/80 to-background"></div>
       {/* Green Dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(100)].map((_, i) => (
@@ -99,10 +98,13 @@ const Hero = () => {
               <Button size="lg">
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
-              <AnimatedBorderButton>
-                <Download className="w-5 h-5" />
-                Download CV
-              </AnimatedBorderButton>
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <AnimatedBorderButton>
+                  <Download className="w-5 h-5" />
+                  View CV
+                </AnimatedBorderButton>
+              </a>
+              
             </div>
             {/* Social icon */}
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">

@@ -15,13 +15,13 @@ const contactInfo = [
     icon: Mail,
     label: "Email",
     value: "Harshagrawal6643@gmail.com",
-    href: "mailto:your@email.com",
+    href: "mailto:Harshagrawal6643@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
     value: "+91 9468843250",
-    href: "tel:+910000000000",
+    href: "tel:+919468843250",
   },
   {
     icon: MapPin,
@@ -31,7 +31,7 @@ const contactInfo = [
   },
 ];
 
- const Contact = () => {
+const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -83,7 +83,6 @@ const contactInfo = [
       setTimeout(() => {
         setSubmitStatus({ type: null, message: "" });
       }, 4000);
-
     } catch (error) {
       console.error(error);
 
@@ -97,23 +96,24 @@ const contactInfo = [
   };
 
   return (
-    <section id="contact" className="py-32 relative overflow-hidden">
-
+    <section
+      id="contact"
+      className="py-24 md:py-32 relative overflow-hidden overflow-x-hidden"
+    >
       {/* background glow */}
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <span className="text-secondary-foreground text-sm font-medium uppercase">
             Get In Touch
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-secondary-foreground">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-6 text-secondary-foreground">
             Let's build{" "}
             <span className="font-serif italic font-normal text-white">
               something great
@@ -126,16 +126,13 @@ const contactInfo = [
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
           {/* Contact Form */}
-          <div className="glass p-8 rounded-3xl border border-primary/30">
-
+          <div className="glass w-full p-5 sm:p-8 rounded-3xl border border-primary/30">
             <form onSubmit={handleSubmit} className="space-y-6">
-
+              {/* Name */}
               <div>
                 <label className="block text-sm mb-2">Name</label>
-
                 <input
                   type="text"
                   required
@@ -144,13 +141,13 @@ const contactInfo = [
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary outline-none"
+                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary outline-none box-border"
                 />
               </div>
 
+              {/* Email */}
               <div>
                 <label className="block text-sm mb-2">Email</label>
-
                 <input
                   type="email"
                   required
@@ -159,13 +156,13 @@ const contactInfo = [
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary outline-none"
+                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary outline-none box-border"
                 />
               </div>
 
+              {/* Message */}
               <div>
                 <label className="block text-sm mb-2">Message</label>
-
                 <textarea
                   rows={5}
                   required
@@ -174,7 +171,7 @@ const contactInfo = [
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary outline-none resize-none"
+                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary outline-none resize-none box-border"
                 />
               </div>
 
@@ -198,22 +195,20 @@ const contactInfo = [
                   }`}
                 >
                   {submitStatus.type === "success" ? (
-                    <CheckCircle className="w-5 h-5" />
+                    <CheckCircle className="w-5 h-5 flex-shrink-0" />
                   ) : (
-                    <AlertCircle className="w-5 h-5" />
+                    <AlertCircle className="w-5 h-5 flex-shrink-0" />
                   )}
 
                   <p className="text-sm">{submitStatus.message}</p>
                 </div>
               )}
             </form>
-
           </div>
 
           {/* Contact Info */}
           <div className="space-y-6">
-
-            <div className="glass rounded-3xl p-8">
+            <div className="glass w-full rounded-3xl p-5 sm:p-8">
               <h3 className="text-xl font-semibold mb-6">
                 Contact Information
               </h3>
@@ -222,25 +217,26 @@ const contactInfo = [
                 <a
                   key={i}
                   href={item.href}
-                  className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition"
+                  className="flex items-center gap-4 p-3 sm:p-4 rounded-xl hover:bg-surface transition"
                 >
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <item.icon className="w-5 h-5 text-primary" />
                   </div>
 
-                  <div>
+                  <div className="min-w-0">
                     <div className="text-sm text-muted-foreground">
                       {item.label}
                     </div>
-                    <div className="font-medium">{item.value}</div>
+                    <div className="font-medium break-all">{item.value}</div>
                   </div>
                 </a>
               ))}
             </div>
 
-            <div className="glass rounded-3xl p-8 border border-primary/30">
+            {/* Availability */}
+            <div className="glass w-full rounded-3xl p-5 sm:p-8 border border-primary/30">
               <div className="flex items-center gap-3 mb-4">
-                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                 <span className="font-medium">Currently Available</span>
               </div>
 
@@ -248,13 +244,11 @@ const contactInfo = [
                 I'm currently open to new opportunities and exciting projects.
               </p>
             </div>
-
           </div>
-
         </div>
-
       </div>
     </section>
   );
 };
-export default  Contact;
+
+export default Contact;
