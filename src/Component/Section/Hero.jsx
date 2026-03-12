@@ -45,7 +45,8 @@ const Hero = () => {
           alt="hero-img"
           className="w-full h-full object-cover opacity-40"
         />
-bg-gradient-to-b from-background/20 via-background/80 to-background
+      </div>
+      <div className="bg-gradient-to-b from-background/20 via-background/80 to-background">
       </div>
       {/* Green Dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
